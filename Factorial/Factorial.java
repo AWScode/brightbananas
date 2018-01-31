@@ -8,16 +8,27 @@
 import java.util.*;
 //create a class called Factorial//
 public class Factorial{
-
-  public static void main(String[] args) {
-    //set the number equals to 10 so that it can calculate 10!//
-    int number=10;
-    int fact=1;
+  //create long method because numbers can get really big//
+  public static long factorial () {
+    //use scanner and ask user for a number//
     Scanner input = new Scanner(System.in);
-    //use a loop to calculate n*(n-1)*(n-2)...//
+    //in order to make it look better, I used "\n"//
+    System.out.println("\nWelcome to Maggie's Factorial Calculator!");
+    System.out.println("Please enter a number");
+    /*receive input as a long number because the number may be big,
+    it can be too big for integers to hold.*/
+    long number = input.nextInt();
+    //this is the future result, and is stored as long because it can get really big as well.//
+    long fact=1;
+    /*use a loop to calculate factorial,
+    it says to start with 1 and end with the input number and the numbers increase by 1 each time*/
     for (int i=1;i<=number; i++){
         fact=fact*i;
     }
-    System.out.println("Hi! 10 factorial is " + fact + ".");
+    System.out.println(number + "! is " + fact);
+    return fact;
+  }
+  public static void main(String[] args) {
+    factorial();
   }
 }
