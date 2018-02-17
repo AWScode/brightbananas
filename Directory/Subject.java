@@ -3,29 +3,62 @@
   Programmer: Maggie Zhang
   Date: 02/16/17
 */
-
 public class Subject{
 
-  public static void main(String[] args) {
-   System.out.println("Welcome come to subject check!");
-   System.out.println("Here we provide a subject list!");
+  public String classname;
+  public int classize; //how many there are in the class
+  public String teacher;
+  public boolean hardness; //if it is HL or SL
+  public String description;
 
-   Subject ceramics = new Subject("Maggie", 11, "ice skating", "ceramics", "Mrs. Haha");
+  public Subject(String x, int y, String z, boolean w, String v){
+    this.classname = x;
+    this.classize = y;
+    this.teacher = z;
+    this.hardness = w;
+    this.description = v;
+  }
 
-   Subject robotics = new Subject("Smart", 9, "hacking", "robotics", "Mr. Joke");
+  public String getClassname(){
+    return classname;
+  }
 
-   Subject dance = new Subject("Lily", 12, "play piano", "dance", "Ms. Yan");
+  public int getClassize(){
+    return classize;
+  }
 
-   Subject love skills= new Subject("Rose", 8, "horse riding", "love skills", "Mr. Jack");
+  public String getTeacher(){
+    return teacher;
+  }
 
-   Subject read mind = new Subject("Dumbledore", 10, "invent things", "read mind", "Ms. Hermione");
+  public boolean getHardness(){
+    return hardness;
+  }
 
-   Subject magic = new Subject("Harry", 11, "Quidditch", "magic", "Mr. Potter");
+  public String getDescription(){
+    return description;
+  }
 
-   System.out.println("Let me proudly introduce:");
 
-   ceramics.hello();
-   String newSubject = ceramics.getSubject();
-   System.out.println("This student is taking: " + newSubject);
- }
+  public void setClassname(String x){
+    classname = x;
+  }
+
+  public void setClassize(int y){
+    classize = y;
+  }
+
+  public void setTeacher(String z){
+    teacher = z;
+  }
+
+  public void setHardness(boolean w){
+    hardness = w;
+  }
+
+  public void setDescription(String v){
+    description = v;
+  }
+
+
 }

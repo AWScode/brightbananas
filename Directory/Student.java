@@ -3,25 +3,23 @@
   Programmer: Maggie Zhang
   Date: 02/16/17
 */
-
 public class Student{
 
-  public static String name;
-  public static int grade;
-  public static String hobby;
-  public static String subject;
-  public static String teacher;
+  public String name;
+  public int grade;
+  public String hobby;
+  public String gender;
+  public String personality;
+  public String subject;
 
-  public Student(String n, int g, String o, String f, String t) {
-    this.name = n;
-    this.grade = g;
-    this.hobby = o;
-    this.Subject = f;
-    this.teacher = t
-  }
+  public Student(String a, int b, String c, String d, String e, String f){
+    this.name = a;
+    this.grade = b;
+    this.hobby = c;
+    this.gender = d;
+    this.personality = e;
+    this.subject = f;
 
-  public static void hello(){
-    System.out.println("Hi guy!");
   }
 
   public String getName(){
@@ -36,32 +34,42 @@ public class Student{
     return hobby;
   }
 
+  public String getGender(){
+    return gender;
+  }
+
+  public String getPersonality(){
+    return personality;
+  }
+
   public String getSubject(){
     return subject;
   }
 
-  public String getTeacher(){
-    return teacher;
+
+  public void setName(String a){
+    name = a;
   }
 
-  public void setName(String n){
-    name = n;
+  public void setGrade(int b){
+    grade = b;
   }
 
-  public void setGrade(int g){
-    grade = g;
+  public void setGender(String d){
+    gender = d;
   }
 
-  public void setHobby(String h){
-    hobby = h;
+  public void setHobby(String c){
+    hobby = c;
+  }
+
+  public void setPersonality(String e){
+    personality = e;
   }
 
   public void setSubject(String f){
-    subject = f
+    subject = f;
   }
 
-  public void setTeacher(String t){
-    teacher = t
-  }
 
 }
