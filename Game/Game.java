@@ -1,4 +1,4 @@
-/* Game.java by Mr. Considine
+/* Game.java by Maggie Z
 This class holds all of the data and methods
 to play a game of ConnectFour. */
 //import java.awt.*;
