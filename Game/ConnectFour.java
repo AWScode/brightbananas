@@ -33,7 +33,7 @@ public static void addPiece1(String [][] f){
     System.out.println("Player X wants to go (0-6):");
     Scanner input = new Scanner(System.in);
     int c = 2*input.nextInt()+1;
-    for (int i=5;i>= 0;i--){
+    for (int i=5;i>= 0;i--){//place the piece in the largest empty space
         if (f[i][c] == " "){
             f[i][c] = "X";
             break;
@@ -53,18 +53,18 @@ public static void addPiece2(String[][] f){
 }
 public static String checkFour(String[][] f){
     for(int i =0;i<6;i++){
-        for (int j= 0; j<7;j+=2){
-            if((f[i][j+1] != " ")
+        for (int j= 0; j<7;j+=2){//check vertically
+            if((f[i][j+1] != " ")//if down 1/3/5/7 is not empty
                     && (f[i][j+3] != " ")
                     && (f[i][j+5] != " ")
                     && (f[i][j+7] != " ")
-                    &&((f[i][j+1] == f[i][j+3])
+                    &&((f[i][j+1] == f[i][j+3])//check if it is from the same player
                             &&(f[i][j+3] == f[i][j+5])
                             && (f[i][j+5] == f[i][j+7])))
                 return f[j][j+1];
         }
     }
-    for (int i=1;i<15;i+=2){
+    for (int i=1;i<15;i+=2){ //check horizontally
         for (int j=0;j<3;j++){
             if((f[j][i] != " ")
                     && (f[j+1][i] != " ")
@@ -100,17 +100,6 @@ public static String checkFour(String[][] f){
                       return f[i][j];
         }
     }
- //checking for draw condition
-
-    for(int i=0;i<6;i++){
-        for (int j=0 ; j<7;j+=2){
-            if((f[i][j+1] != " ")
-                    && (f[i][j+3] != " ")
-                    &&(f[i][j+5] != " ")
-                    &&(f[i][j+7] != " "))
-                return "draw";
-        }
-    }
 
     return null;
 }
@@ -138,3 +127,17 @@ public static void main(String[] args){
   }
 
  }
+
+
+ //checking for draw condition.
+ //since this doesn't work now, I commented out this part. Will be fixed
+
+    /*for(int i=0;i<6;i++){
+        for (int j=0 ; j<7;j+=2){
+            if((f[i][j+1] != " ")
+                    && (f[i][j+3] != " ")
+                    &&(f[i][j+5] != " ")
+                    &&(f[i][j+7] != " "))
+                return "draw";
+        }
+    }*/
