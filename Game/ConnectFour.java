@@ -34,34 +34,48 @@ public static void displayBoard(String[][] f) {
 
 public static void addPiece1(String [][] f){
     //this will add piece for player 1
-    System.out.println("Player X wants to go (0-6):");
-    Scanner input = new Scanner(System.in);//get player X input
-    int c = 2*input.nextInt()+1;//converting user's input into my board system, since it is a 2 | for 1 blank system
-    for (int i=5;i>= 0;i--){//place the piece in the largest empty space
+    boolean isFull = true;
+    while(isFull){//use a while loop to re-ask for player X's input if she/he puts his/her step on a full column
+
+      System.out.println("\nPlayer X wants to go (0-6):");
+      Scanner input = new Scanner(System.in);//get player X input
+      int c = 2*input.nextInt()+1;//converting user's input into my board system, since it is a 2 | for 1 blank system
+      for (int i=5;i>= 0;i--){//place the piece in the largest empty space
+
         if (f[i][c] == " "){//if blank, place X in
             f[i][c] = "X";
+            isFull = false;
             break;
-        }
+        }//until here, this is the case where the column is not full yet, so it keeps inputing "X" to the board
+        if (i==0){//when reaches the top, meaning the column is full
+          System.out.println("\n      ----ALERT----\nSorry! This column is full.\nPlease choose another column.");
+        }//this is the case when isFull is true, so the while loop continues to go, which leads us to line 40 again (re-get a valid input)
+
+    }
+}
+}
+
+
+public static void addPiece2(String[][] f){
+    //this will add piece for player 2
+    boolean isFull = true;
+    while(isFull){//use a while loop to re-ask for player Y's input if she/he puts his/her step on a full column
+      System.out.println("\nPlayer Y wants to go (0-6): ");
+      Scanner input = new Scanner(System.in);//get player Y input
+      int c = 2*input.nextInt()+1;//converting user's input into my board system, since it is a 2 | for 1 blank system
+      for(int i =5;i>= 0 ; i--){//place the piece in the largest empty space
+        if (f[i][c] == " "){//if blank, place Y in
+            f[i][c] = "Y";
+            isFull = false;
+            break;
+        }//until here, this is the case where the column is not full yet, so it keeps inputing "Y" to the board
+        if (i==0){
+          System.out.println("\n      ----ALERT----\nSorry! This column is full.\nPlease choose another column.");
+        }//this is the case when isFull is true, so the while loop continues to go, which leads us to line 63 again (re-get a valid input)
 
     }
 
 }
-
-
-
-public static void addPiece2(String[][] f){
-    //this will add piece for player 1
-    System.out.println("Player Y wants to go (0-6): ");
-    Scanner input = new Scanner(System.in);//get player Y input
-    int c = 2*input.nextInt()+1;//converting user's input into my board system, since it is a 2 | for 1 blank system
-    for(int i =5;i>= 0 ; i--){//place the piece in the largest empty space
-        if (f[i][c] == " "){//if blank, place Y in
-            f[i][c] = "Y";
-            break;
-        }
-
-    }
-
 }
 
 public static String checkFour(String[][] f){
