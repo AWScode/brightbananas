@@ -155,7 +155,7 @@ public class MainFrame extends Frame{
 
     //a button that can transition us to a new frame (f2)
     n = new Button("Click for receipt");
-    n.setBounds(315, 500, 150, 30);
+    n.setBounds(315, 530, 150, 30);
     add(n);
     n.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e){
@@ -214,7 +214,7 @@ public class MainFrame extends Frame{
     tf2 = new TextField("Receipt");
     tf2.setBounds(15, 50, 175, 30);
     f2.add(tf2);
-    tf2.setText("    Receipt");
+    tf2.setText("              Receipt");
 
 
     //paying method, checkbox
